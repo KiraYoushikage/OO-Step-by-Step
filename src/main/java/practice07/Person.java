@@ -2,13 +2,20 @@ package practice07;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Objects;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Person {
-    private int id;
+
+    private Integer id;
     private String name;
     private int age;
+
+
     private String career;
 
     public String introduce() {
@@ -20,14 +27,23 @@ public class Person {
         this.age = age;
     }
 
-    public Person(int id, String name, int age) {
+    public Person(Integer id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
     }
+
+//    public Person(Integer id, String name, int age, String career) {
+//        this.id = id;
+//        this.name = name;
+//        this.age = age;
+//        this.career = career;
+//    }
+
     public boolean isEqualTo(Object object){
+        if (Objects.isNull(object))return false;
         if(object instanceof Person)
-            return (this.id==((Person) object).getId());
+            return getId().equals(((Person) object).getId());
         return false;
     }
 

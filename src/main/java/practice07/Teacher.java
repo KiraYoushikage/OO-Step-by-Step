@@ -8,9 +8,6 @@ public class Teacher extends Person {
 
     private Klass klass;
 
-
-
-
     public Teacher(String name, int age) {
         super(-1,name, age,"Teacher");
     }
