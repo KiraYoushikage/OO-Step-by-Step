@@ -16,7 +16,7 @@ public class Student extends Person {
     private Klass klass;
 
     public Student(String name, int age, Klass klass) {
-        super(-1,name, age,STUDENT);
+        super(null,name, age,STUDENT);
         this.klass = klass;
     }
 
