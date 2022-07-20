@@ -93,8 +93,13 @@ public class Teacher extends Person {
     }
 
     public void noticeStudentInfos(Student student) {
-        String res=String.format("I am %s. I know %s has joined Class %s.\n",getName(),student.getName(),student.getKlass().getNumber());
+        String res=String.format("I am %s. I know %s has joined Class %d.\n",getName(),student.getName(),student.getKlass().getNumber());
         System.out.println(res);
     }
+    public void noticeLeaderInfos(Student student) {
+        String res=String.format("I am %s. I know %s become Leader of Class %d.\n",getName(),student.getName(),student.getKlass().getNumber());
+        System.out.println(res);
+    }
+
 
 }

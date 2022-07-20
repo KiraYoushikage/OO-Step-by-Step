@@ -41,6 +41,7 @@ public class Klass {
             if (this.members.stream().anyMatch(member -> member.isEqualTo(person))) {
                 student.setLeaderClass(this);
                 this.leader = person;
+                ObersverTeacherGroup.notifyLeaderInfos(student.getKlass().getNumber(),student);
             } else {
                 System.out.print(NOT_ONE_OF_US + "\n");
             }

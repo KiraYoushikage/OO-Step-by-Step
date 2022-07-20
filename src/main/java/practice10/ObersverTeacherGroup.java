@@ -25,13 +25,13 @@ public class ObersverTeacherGroup {
         group.put(number, teachers);
     }
 
-    public static void notifyLeaderInfos(){
-
+    public static void notifyLeaderInfos(int number,Student student){
+        List<Teacher> teachers=group.get(number);
+        teachers.forEach(teacher -> teacher.noticeLeaderInfos(student));
     }
 
     public static void notifyStudentInfos(int number, Student student) {
         List<Teacher> teachers=group.get(number);
         teachers.forEach(teacher -> teacher.noticeStudentInfos(student));
-
     }
 }
