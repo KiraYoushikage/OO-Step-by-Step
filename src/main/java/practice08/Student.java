@@ -15,6 +15,8 @@ public class Student extends Person {
 
     private Klass klass;
 
+    private Klass leaderClass;
+
     public Student(String name, int age, Klass klass) {
         super(null,name, age,STUDENT);
         this.klass = klass;
@@ -31,11 +33,22 @@ public class Student extends Person {
        String name= StrTemplate.INTRODUCE_NAME;
        String age = StrTemplate.INTRODUCE_AGE;
        String career=StrTemplate.INTRODUCE_CAREER;
-       String klass= StrTemplate.INTRODUCE_CLASS;
+       String klass= "";
+       if(Objects.nonNull(this.getKlass())){
+           klass=StrTemplate.INTRODUCE_CLASS;
+       }
        if(Objects.nonNull(this.getKlass().getLeader())&&this.klass.getLeader().getId().equals(getId())){
            klass=StrTemplate.INTRODUCE_LEADER_OF_CLASS;
        }
-       String template= StringUtils.contactStr(name,age,career,klass);
+        if(Objects.nonNull(this.getLeaderClass())){
+            klass=StrTemplate.INTRODUCE_LEADER_OF_CLASS;
+            String template= StringUtils.contactStr(name,age,career,klass);
+            return  String.format(template ,getName(),getAge(),getCareer(),getLeaderClass().getNumber());
+        }
+
+
+        String template= StringUtils.contactStr(name,age,career,klass);
+
        return  String.format(template ,getName(),getAge(),getCareer(),getKlass().getNumber());
     }
 
