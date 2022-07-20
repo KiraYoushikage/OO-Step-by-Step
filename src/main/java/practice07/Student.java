@@ -3,7 +3,7 @@ package practice07;
 import constant.StrTemplate;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import utils.StringUtils;
+import utils.StrUtils;
 
 import java.util.Objects;
 
@@ -35,7 +35,7 @@ public class Student extends Person {
        if(Objects.nonNull(this.getKlass().getLeader())&&this.klass.getLeader().getId().equals(getId())){
            klass=StrTemplate.INTRODUCE_LEADER_OF_CLASS;
        }
-       String template= StringUtils.contactStr(name,age,career,klass);
+       String template= StrUtils.contactStr(name,age,career,klass);
        return  String.format(template ,getName(),getAge(),getCareer(),getKlass().getNumber());
     }
 

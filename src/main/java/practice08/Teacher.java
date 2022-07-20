@@ -5,7 +5,7 @@ import constant.StrTemplate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import utils.StringUtils;
+import utils.StrUtils;
 
 import java.util.Objects;
 
@@ -51,11 +51,11 @@ public class Teacher extends Person {
         if(Objects.isNull(getKlass()))
         {
             klass = StrTemplate.TEACH_NO_CLASS;
-            String template = StringUtils.contactStr(name,age,career,klass);
+            String template = StrUtils.contactStr(name,age,career,klass);
             return String.format(template,getName(),getAge(),getCareer());
         }
 
-        String template = StringUtils.contactStr(name,age,career,klass);
+        String template = StrUtils.contactStr(name,age,career,klass);
         return String.format(template,getName(),getAge(),getCareer(),getKlass().getNumber());
 
     }

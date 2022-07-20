@@ -1,6 +1,6 @@
 package utils;
 
-public class StringUtils {
+public class StrUtils {
 
     public static String contactStr(String ...strs){
         return String.join(" ",strs);

@@ -13,6 +13,8 @@ public class StrTemplate {
 
     public static final String INTRODUCE_TEACH_CLASS="I teach Class %d.";
 
+    public static final String INTRODUCE_TEACH_LOTS_OF_CLASS="I teach Class ";
+
     public static final String TEACH_NO_CLASS="I teach No Class.";
     public static final String DEFAULT_CLASS="Class 2";
 }
