@@ -39,6 +39,10 @@ public class Teacher extends Person {
     public Teacher(int id, String name, int age, List<Klass> klasses) {
         super(id, name, age,TEACHER);
         this.klasses = klasses;
+        klasses.forEach(klass->{
+            int number=klass.getNumber();
+            ObersverTeacherGroup.observe(number,this);
+        });
     }
 
     public Teacher(int id, String name, int age) {
@@ -93,12 +97,12 @@ public class Teacher extends Person {
     }
 
     public void noticeStudentInfos(Student student) {
-        String res=String.format("I am %s. I know %s has joined Class %d.\n",getName(),student.getName(),student.getKlass().getNumber());
-        System.out.println(res);
+        String res=String.format("I am %s. I know %s has joined Class %d.\n",getName(),student.getName(),student.getLeaderClass().getNumber());
+        System.out.print(res);
     }
     public void noticeLeaderInfos(Student student) {
-        String res=String.format("I am %s. I know %s become Leader of Class %d.\n",getName(),student.getName(),student.getKlass().getNumber());
-        System.out.println(res);
+        String res=String.format("I am %s. I know %s become Leader of Class %d.\n",getName(),student.getName(),student.getLeaderClass().getNumber());
+        System.out.print(res);
     }
 
 

@@ -28,7 +28,7 @@ public class Klass {
     }
 
     public void assignLeader(Person person) {
-
+//        System.out.println("zhunb");
         if ((person instanceof Student) && person.getCareer().equals(STUDENT)) {
             Student student = (Student) person;
             //不是这么判断的
@@ -38,7 +38,9 @@ public class Klass {
 //            }else{
 //                System.out.print(NOT_ONE_OF_US+"\n");
 //            }
+            student.setLeaderClass(this);
             if (this.members.stream().anyMatch(member -> member.isEqualTo(person))) {
+//                System.out.println("有没有啊");
                 student.setLeaderClass(this);
                 this.leader = person;
                 ObersverTeacherGroup.notifyLeaderInfos(student.getKlass().getNumber(),student);

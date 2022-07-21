@@ -26,12 +26,18 @@ public class ObersverTeacherGroup {
     }
 
     public static void notifyLeaderInfos(int number,Student student){
-        List<Teacher> teachers=group.get(number);
-        teachers.forEach(teacher -> teacher.noticeLeaderInfos(student));
+//        List<Teacher> teachers=group.get(number);
+//        teachers.forEach(teacher -> teacher.noticeLeaderInfos(student));
+        group.forEach((key,teachers)->{
+            teachers.forEach(teacher -> teacher.noticeLeaderInfos(student));
+        });
     }
 
     public static void notifyStudentInfos(int number, Student student) {
-        List<Teacher> teachers=group.get(number);
-        teachers.forEach(teacher -> teacher.noticeStudentInfos(student));
+//        List<Teacher> teachers=group.get(number);
+//        teachers.forEach(teacher -> teacher.noticeStudentInfos(student));
+        group.forEach((key,teachers)->{
+            teachers.forEach(teacher -> teacher.noticeStudentInfos(student));
+        });
     }
 }
